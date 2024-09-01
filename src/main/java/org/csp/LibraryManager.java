@@ -37,6 +37,6 @@ public class LibraryManager {
     }
 
     public List<Book> getAvailableBooks(){
-        return null;
+        return bookRepository.getBooks(false);
     }
 }
