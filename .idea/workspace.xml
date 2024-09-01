@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="061103d9-6f9e-4e0d-95c6-de2a51f15970" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/csp/exceptions/DuplicateISBNException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/csp/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/csp/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/csp/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/csp/BookDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/csp/LibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/csp/LibraryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/csp/LibraryManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/csp/LibraryManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -41,6 +45,7 @@
     "Application.Main.executor": "Run",
     "JUnit.LibraryManagerTest.addBook.executor": "Run",
     "JUnit.LibraryManagerTest.addBookShouldInsertASingleBook.executor": "Run",
+    "JUnit.LibraryManagerTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -63,7 +68,22 @@
       <recent name="org.csp" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LibraryManagerTest.addBookShouldInsertASingleBook">
+  <component name="RunManager" selected="JUnit.LibraryManagerTest">
+    <configuration name="LibraryManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibraryManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.csp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.csp" />
+      <option name="MAIN_CLASS_NAME" value="org.csp.LibraryManagerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LibraryManagerTest.addBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibraryManagement" />
       <extension name="coverage">
@@ -98,6 +118,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LibraryManagerTest" />
         <item itemvalue="JUnit.LibraryManagerTest.addBookShouldInsertASingleBook" />
         <item itemvalue="JUnit.LibraryManagerTest.addBook" />
       </list>

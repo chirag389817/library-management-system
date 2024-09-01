@@ -1,5 +1,7 @@
 package org.csp;
 
+import org.csp.exceptions.DuplicateISBNException;
+
 public class LibraryManager {
 
     private final BookDao bookDao;
@@ -8,7 +10,7 @@ public class LibraryManager {
         this.bookDao = bookDao;
     }
 
-    public void addBook(Book book){
+    public void addBook(Book book) throws DuplicateISBNException{
         bookDao.insert(book);
     }
 }
