@@ -11,6 +11,7 @@ public class LibraryManager {
     }
 
     public void addBook(Book book) throws DuplicateISBNException{
+        if(bookDao.existsByIsbn(book.getIsbn())) throw new DuplicateISBNException(book.getIsbn());
         bookDao.insert(book);
     }
 }

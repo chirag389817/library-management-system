@@ -11,4 +11,9 @@ public class DuplicateISBNException extends Exception{
     public String toString() {
         return "ISBN: " + isbn + " is already exists";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return toString().equals(((DuplicateISBNException)obj).toString());
+    }
 }

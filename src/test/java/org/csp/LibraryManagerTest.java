@@ -29,6 +29,7 @@ class LibraryManagerTest {
     @Test
     void addBookShouldInsertASingleBook() throws DuplicateISBNException {
         Book book = new Book("9789353008956", "Logic Design", "Dr. Chirag", 2003);
+        when(bookDao.existsByIsbn(book.getIsbn())).thenReturn(false);
         libraryManager.addBook(book);
         Mockito.verify(bookDao, times(1)).insert(book);
     }
