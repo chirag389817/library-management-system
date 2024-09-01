@@ -31,11 +31,19 @@ public class BookRepository {
     }
 
     public Book getByIsbn(String isbn){
-        // TODO: fetch book from database
-        return null;
+        Session session = sessionFactory.openSession();
+        Query<Book> query = session.createQuery("FROM Book b WHERE b.isbn = :isbn", Book.class);
+        query.setParameter("isbn", isbn);
+        Book book = query.uniqueResult();
+        session.close();
+        return book;
     }
 
     public void updateBook(Book book){
-        // TODO: update the book in database
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.merge(book);
+        transaction.commit();
+        session.close();
     }
 }
