@@ -60,4 +60,13 @@ class LibraryManagerTest {
         BookNotFoundException bookNotFoundException = assertThrows(BookNotFoundException.class, () -> libraryManager.borrowBook("1234567890123"));
         Assertions.assertEquals(bookNotFoundException, new BookNotFoundException("1234567890123"));
     }
+
+    @Test
+    void borrowBookShouldNotAllowABookTOBeBorrowedWhichIsAlreadyBorrowed() {
+        Book book = new Book("9789353008956", "Logic Design", "Dr. Chirag", 2003);
+        book.setBorrowed(true);
+        when(bookRepository.getByIsbn(book.getIsbn())).thenReturn(book);
+        BookAlreadyBorrowedException bookAlreadyBorrowedException = assertThrows(BookAlreadyBorrowedException.class, () -> libraryManager.borrowBook(book.getIsbn()));
+        Assertions.assertEquals(bookAlreadyBorrowedException, new BookAlreadyBorrowedException(book.getIsbn()));
+    }
 }
