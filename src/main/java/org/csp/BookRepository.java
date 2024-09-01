@@ -50,7 +50,11 @@ public class BookRepository {
     }
 
     public List<Book> getBooks(boolean isBorrowed){
-        // TODO: get the books from database according to isBorrowed parameter
-        return null;
+        Session session = sessionFactory.openSession();
+        Query<Book> query = session.createQuery("FROM Book b WHERE b.is_borrowed LIKE :isBorrowed", Book.class);
+        query.setParameter("isBorrowed", isBorrowed);
+        List<Book> books = query.list();
+        session.close();
+        return books;
     }
 }
