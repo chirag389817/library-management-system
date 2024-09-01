@@ -6,6 +6,8 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
+import java.util.List;
+
 public class BookRepository {
 
     private SessionFactory sessionFactory;
@@ -45,5 +47,10 @@ public class BookRepository {
         session.merge(book);
         transaction.commit();
         session.close();
+    }
+
+    public List<Book> getBooks(boolean isBorrowed){
+        // TODO: get the books from database according to isBorrowed parameter
+        return null;
     }
 }

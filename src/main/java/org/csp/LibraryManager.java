@@ -5,6 +5,8 @@ import org.csp.exceptions.BookNotBorrowedException;
 import org.csp.exceptions.BookNotFoundException;
 import org.csp.exceptions.DuplicateISBNException;
 
+import java.util.List;
+
 public class LibraryManager {
 
     private final BookRepository bookRepository;
@@ -32,5 +34,9 @@ public class LibraryManager {
         if(!book.isBorrowed()) throw new BookNotBorrowedException(book.getIsbn());
         book.setBorrowed(false);
         bookRepository.updateBook(book);
+    }
+
+    public List<Book> getAvailableBooks(){
+        return null;
     }
 }
