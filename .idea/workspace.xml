@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="061103d9-6f9e-4e0d-95c6-de2a51f15970" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/csp/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/csp/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/csp/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/csp/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/csp/LibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/csp/LibraryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/csp/LibraryManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/csp/LibraryManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +69,19 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.LibraryManagerTest">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.csp.Main" />
+      <module name="LibraryManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.csp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LibraryManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibraryManagement" />
       <extension name="coverage">
@@ -114,6 +132,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.LibraryManagerTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.LibraryManagerTest.addBookShouldInsertASingleBook" />
         <item itemvalue="JUnit.LibraryManagerTest.addBook" />
       </list>

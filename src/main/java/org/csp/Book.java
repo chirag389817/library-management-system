@@ -1,9 +1,17 @@
 package org.csp;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "books")
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String isbn;
     private String title;
     private String author;
+    @Column(name = "publication_year")
     private int publicationYear;
 
     public Book(String isbn, String title, String author, int publicationYear) {
@@ -11,6 +19,14 @@ public class Book {
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getIsbn() {

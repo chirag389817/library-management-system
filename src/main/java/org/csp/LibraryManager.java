@@ -4,14 +4,14 @@ import org.csp.exceptions.DuplicateISBNException;
 
 public class LibraryManager {
 
-    private final BookDao bookDao;
+    private final BookRepository bookRepository;
 
-    public LibraryManager(BookDao bookDao) {
-        this.bookDao = bookDao;
+    public LibraryManager(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
     }
 
     public void addBook(Book book) throws DuplicateISBNException{
-        if(bookDao.existsByIsbn(book.getIsbn())) throw new DuplicateISBNException(book.getIsbn());
-        bookDao.insert(book);
+        if(bookRepository.existsByIsbn(book.getIsbn())) throw new DuplicateISBNException(book.getIsbn());
+        bookRepository.insert(book);
     }
 }

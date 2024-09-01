@@ -17,27 +17,27 @@ import static org.mockito.Mockito.*;
 class LibraryManagerTest {
 
     @Mock
-    private BookDao bookDao;
+    private BookRepository bookRepository;
     @InjectMocks
     private LibraryManager libraryManager;
 
     @BeforeEach
     void setUp() {
-        libraryManager = new LibraryManager(bookDao);
+        libraryManager = new LibraryManager(bookRepository);
     }
 
     @Test
     void addBookShouldInsertASingleBook() throws DuplicateISBNException {
         Book book = new Book("9789353008956", "Logic Design", "Dr. Chirag", 2003);
-        when(bookDao.existsByIsbn(book.getIsbn())).thenReturn(false);
+        when(bookRepository.existsByIsbn(book.getIsbn())).thenReturn(false);
         libraryManager.addBook(book);
-        Mockito.verify(bookDao, times(1)).insert(book);
+        Mockito.verify(bookRepository, times(1)).insert(book);
     }
 
     @Test
     void addBookShouldNotInsertBookWithDuplicateISBN() {
         Book book = new Book("9789353008956", "Logic Design", "Dr. Chirag", 2003);
-        when(bookDao.existsByIsbn(book.getIsbn())).thenReturn(true);
+        when(bookRepository.existsByIsbn(book.getIsbn())).thenReturn(true);
         DuplicateISBNException duplicateISBNException = assertThrows(DuplicateISBNException.class, () -> libraryManager.addBook(book));
         Assertions.assertEquals(duplicateISBNException, new DuplicateISBNException(book.getIsbn()));
     }
