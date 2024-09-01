@@ -20,6 +20,7 @@ public class LibraryManager {
     public void borrowBook(String isbn) throws BookNotFoundException, BookAlreadyBorrowedException {
         Book book = bookRepository.getByIsbn(isbn);
         if(book==null) throw new BookNotFoundException(isbn);
+        if(book.isBorrowed()) throw new BookAlreadyBorrowedException(book.getIsbn());
         book.setBorrowed(true);
         bookRepository.updateBook(book);
     }
