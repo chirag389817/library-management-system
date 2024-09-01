@@ -1,15 +1,15 @@
 package org.csp.exceptions;
 
-public class DuplicateISBNException extends Exception{
+public class BookAlreadyBorrowedException extends Exception{
     private String isbn;
 
-    public DuplicateISBNException(String isbn) {
+    public BookAlreadyBorrowedException(String isbn) {
         this.isbn = isbn;
     }
 
     @Override
     public String toString() {
-        return "ISBN: " + isbn + " is already exists";
+        return STR."Book is already borrowed using ISBN: \{isbn}";
     }
 
     @Override

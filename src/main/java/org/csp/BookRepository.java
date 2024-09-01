@@ -29,4 +29,13 @@ public class BookRepository {
         session.close();
         return count != null && count > 0;
     }
+
+    public Book getByIsbn(String isbn){
+        // TODO: fetch book from database
+        return null;
+    }
+
+    public void updateBook(Book book){
+        // TODO: update the book in database
+    }
 }

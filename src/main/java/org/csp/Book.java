@@ -13,6 +13,8 @@ public class Book {
     private String author;
     @Column(name = "publication_year")
     private int publicationYear;
+    @Column(name = "is_borrowed")
+    private boolean isBorrowed;
 
     public Book(String isbn, String title, String author, int publicationYear) {
         this.isbn = isbn;
@@ -59,5 +61,13 @@ public class Book {
 
     public void setPublicationYear(int publicationYear) {
         this.publicationYear = publicationYear;
+    }
+
+    public boolean isBorrowed() {
+        return isBorrowed;
+    }
+
+    public void setBorrowed(boolean borrowed) {
+        isBorrowed = borrowed;
     }
 }
