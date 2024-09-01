@@ -120,4 +120,19 @@ class LibraryManagerTest {
                 ()->assertEquals(availableBooks.get(0).getIsbn(),book.getIsbn())
                 );
     }
+
+    @Test
+    void getAvailableBooksShouldIgnoreBorrowedBooks(){
+        Book book1 = new Book("9789353008956", "Logic Design", "Dr. Chirag", 2003);
+        Book book2 = new Book("9789353008957", "Logic Design", "Dr. Chirag", 2003);
+        book1.setBorrowed(true);
+        when(bookRepository.getBooks(false)).thenReturn(Arrays.asList(book2));
+        List<Book> availableBooks = libraryManager.getAvailableBooks();
+        assertAll(
+                ()->verify(bookRepository).getBooks(false),
+                ()->Assertions.assertNotNull(availableBooks),
+                ()->assertEquals(availableBooks.size(), 1),
+                ()->assertEquals(availableBooks.get(0).getIsbn(),book2.getIsbn())
+        );
+    }
 }
