@@ -18,7 +18,7 @@ class LibraryManagerTest {
 
     @BeforeEach
     void setUp() {
-        libraryManager = new LibraryManager();
+        libraryManager = new LibraryManager(bookDao);
     }
 
     @Test

@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="061103d9-6f9e-4e0d-95c6-de2a51f15970" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/csp/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/csp/BookDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/csp/LibraryManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/csp/LibraryManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/csp/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/csp/LibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/csp/LibraryManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +40,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "JUnit.LibraryManagerTest.addBook.executor": "Run",
+    "JUnit.LibraryManagerTest.addBookShouldInsertASingleBook.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -68,7 +63,7 @@
       <recent name="org.csp" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.LibraryManagerTest.addBookShouldInsertASingleBook">
     <configuration name="LibraryManagerTest.addBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibraryManagement" />
       <extension name="coverage">
@@ -85,8 +80,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LibraryManagerTest.addBookShouldInsertASingleBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibraryManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.csp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.csp" />
+      <option name="MAIN_CLASS_NAME" value="org.csp.LibraryManagerTest" />
+      <option name="METHOD_NAME" value="addBookShouldInsertASingleBook" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LibraryManagerTest.addBookShouldInsertASingleBook" />
         <item itemvalue="JUnit.LibraryManagerTest.addBook" />
       </list>
     </recent_temporary>
