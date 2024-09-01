@@ -1,6 +1,7 @@
 package org.csp;
 
 import org.csp.exceptions.BookAlreadyBorrowedException;
+import org.csp.exceptions.BookNotBorrowedException;
 import org.csp.exceptions.BookNotFoundException;
 import org.csp.exceptions.DuplicateISBNException;
 
@@ -24,4 +25,6 @@ public class LibraryManager {
         book.setBorrowed(true);
         bookRepository.updateBook(book);
     }
+
+    public void returnBook(String isbn) throws BookNotFoundException, BookNotBorrowedException {}
 }

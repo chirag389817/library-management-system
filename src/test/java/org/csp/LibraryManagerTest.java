@@ -1,6 +1,7 @@
 package org.csp;
 
 import org.csp.exceptions.BookAlreadyBorrowedException;
+import org.csp.exceptions.BookNotBorrowedException;
 import org.csp.exceptions.BookNotFoundException;
 import org.csp.exceptions.DuplicateISBNException;
 import org.junit.jupiter.api.Assertions;
@@ -45,7 +46,7 @@ class LibraryManagerTest {
     }
 
     @Test
-    void addBookShouldAllowBookToBorrow() throws BookNotFoundException, BookAlreadyBorrowedException {
+    void borrowBookShouldAllowBookToBorrow() throws BookNotFoundException, BookAlreadyBorrowedException {
         Book book = new Book("9789353008956", "Logic Design", "Dr. Chirag", 2003);
         book.setBorrowed(false);
         when(bookRepository.getByIsbn(book.getIsbn())).thenReturn(book);
@@ -68,5 +69,15 @@ class LibraryManagerTest {
         when(bookRepository.getByIsbn(book.getIsbn())).thenReturn(book);
         BookAlreadyBorrowedException bookAlreadyBorrowedException = assertThrows(BookAlreadyBorrowedException.class, () -> libraryManager.borrowBook(book.getIsbn()));
         Assertions.assertEquals(bookAlreadyBorrowedException, new BookAlreadyBorrowedException(book.getIsbn()));
+    }
+
+    @Test
+    void returnBookShouldAllowBookToReturn() throws BookNotFoundException, BookNotBorrowedException {
+        Book book = new Book("9789353008956", "Logic Design", "Dr. Chirag", 2003);
+        book.setBorrowed(true);
+        when(bookRepository.getByIsbn(book.getIsbn())).thenReturn(book);
+        libraryManager.returnBook(book.getIsbn());
+        book.setBorrowed(false);
+        Mockito.verify(bookRepository, times(1)).updateBook(book);
     }
 }

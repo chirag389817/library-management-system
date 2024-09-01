@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="061103d9-6f9e-4e0d-95c6-de2a51f15970" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/csp/exceptions/BookNotBorrowedException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/csp/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/csp/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/csp/LibraryManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/csp/LibraryManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,7 @@
       <recent name="org.csp.exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.LibraryManagerTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.csp.Main" />
       <module name="LibraryManagement" />
@@ -148,8 +148,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.LibraryManagerTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.LibraryManagerTest.addBookShouldAllowBookToBorrow" />
         <item itemvalue="JUnit.LibraryManagerTest.addBookShouldInsertASingleBook" />
         <item itemvalue="JUnit.LibraryManagerTest.addBook" />
