@@ -17,8 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -108,5 +107,17 @@ class LibraryManagerTest {
         List<Book> availableBooks = libraryManager.getAvailableBooks();
         Assertions.assertNotNull(availableBooks);
         assertEquals(availableBooks.size(), 0);
+    }
+
+    @Test
+    void getAvailableBooksShouldReturnOne(){
+        Book book = new Book("9789353008956", "Logic Design", "Dr. Chirag", 2003);
+        when(bookRepository.getBooks(false)).thenReturn(Arrays.asList(book));
+        List<Book> availableBooks = libraryManager.getAvailableBooks();
+        assertAll(
+                ()->Assertions.assertNotNull(availableBooks),
+                ()->assertEquals(availableBooks.size(), 1),
+                ()->assertEquals(availableBooks.get(0).getIsbn(),book.getIsbn())
+                );
     }
 }
