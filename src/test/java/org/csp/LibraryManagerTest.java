@@ -87,4 +87,13 @@ class LibraryManagerTest {
         BookNotFoundException bookNotFoundException = assertThrows(BookNotFoundException.class, () -> libraryManager.returnBook("1234567890123"));
         Assertions.assertEquals(bookNotFoundException, new BookNotFoundException("1234567890123"));
     }
+
+    @Test
+    void returnBookShouldNotAllowABookToReturnWhichIsNotBorrowed() {
+        Book book = new Book("9789353008956", "Logic Design", "Dr. Chirag", 2003);
+        book.setBorrowed(false);
+        when(bookRepository.getByIsbn(book.getIsbn())).thenReturn(book);
+        BookNotBorrowedException bookNotBorrowedException = assertThrows(BookNotBorrowedException.class, () -> libraryManager.returnBook(book.getIsbn()));
+        Assertions.assertEquals(bookNotBorrowedException, new BookNotBorrowedException(book.getIsbn()));
+    }
 }
