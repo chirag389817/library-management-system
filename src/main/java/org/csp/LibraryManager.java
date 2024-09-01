@@ -26,5 +26,9 @@ public class LibraryManager {
         bookRepository.updateBook(book);
     }
 
-    public void returnBook(String isbn) throws BookNotFoundException, BookNotBorrowedException {}
+    public void returnBook(String isbn) throws BookNotFoundException, BookNotBorrowedException {
+        Book book = bookRepository.getByIsbn(isbn);
+        book.setBorrowed(false);
+        bookRepository.updateBook(book);
+    }
 }
