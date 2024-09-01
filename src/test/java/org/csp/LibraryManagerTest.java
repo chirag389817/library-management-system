@@ -53,4 +53,11 @@ class LibraryManagerTest {
         book.setBorrowed(true);
         Mockito.verify(bookRepository, times(1)).updateBook(book);
     }
+
+    @Test
+    void borrowBookShouldNotAllowABookTOBeBorrowedWhichDoesNotExists() {
+        when(bookRepository.getByIsbn("1234567890123")).thenReturn(null);
+        BookNotFoundException bookNotFoundException = assertThrows(BookNotFoundException.class, () -> libraryManager.borrowBook("1234567890123"));
+        Assertions.assertEquals(bookNotFoundException, new BookNotFoundException("1234567890123"));
+    }
 }
